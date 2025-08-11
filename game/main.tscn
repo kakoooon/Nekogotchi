@@ -1,0 +1,787 @@
+[gd_scene load_steps=64 format=3 uid="uid://dcf8a4pnler2o"]
+
+[ext_resource type="Script" uid="uid://dofd2o0q6owrp" path="res://game/main.gd" id="1_0g8li"]
+[ext_resource type="Shader" uid="uid://dee54qispbxcm" path="res://common/shaders/checkerboard.gdshader" id="2_52ih6"]
+[ext_resource type="PackedScene" uid="uid://dum1o0rp15iq7" path="res://game/ui/animations/default_button_anim.tscn" id="5_43ofh"]
+[ext_resource type="PackedScene" uid="uid://cmtnvqayxoalt" path="res://common/ui_animation_component/ui_animation_component.tscn" id="5_wqnch"]
+[ext_resource type="Texture2D" uid="uid://5dmurf2ts4y6" path="res://game/ui/art/sound_on.png" id="6_lr1nq"]
+[ext_resource type="Script" uid="uid://conk0en7jxcil" path="res://game/actions/feed/items/food_resource.gd" id="7_n50qw"]
+[ext_resource type="Resource" uid="uid://dcewmgls26mm1" path="res://game/actions/feed/items/data/pizza.tres" id="8_d68jn"]
+[ext_resource type="Resource" uid="uid://c2u06egu0djhf" path="res://game/actions/feed/items/data/bread.tres" id="8_xo7u2"]
+[ext_resource type="Texture2D" uid="uid://cbqv1w1n7cbrw" path="res://game/ui/stat_bar/art/hunger.png" id="9_0yg3b"]
+[ext_resource type="PackedScene" uid="uid://dav0mv42aeolv" path="res://game/ui/stat_bar/stat_bar.tscn" id="9_63s1j"]
+[ext_resource type="AudioStream" uid="uid://cdu6obhyyefyc" path="res://game/sounds/Lily-Paddling Down the Stream.wav" id="9_erx6h"]
+[ext_resource type="Resource" uid="uid://crqwms6ghbtpk" path="res://game/actions/feed/items/data/burger.tres" id="9_oe6pg"]
+[ext_resource type="Resource" uid="uid://dukyk0leic5ec" path="res://game/actions/feed/items/data/sandwich.tres" id="9_yuvc4"]
+[ext_resource type="Resource" uid="uid://dbfs7afp1vrd2" path="res://game/actions/feed/items/data/steak.tres" id="10_l3jl3"]
+[ext_resource type="Resource" uid="uid://esotmgbmp2dq" path="res://game/actions/feed/items/data/cheesecake.tres" id="10_sjsjx"]
+[ext_resource type="Texture2D" uid="uid://b5emmxex7xcm2" path="res://game/ui/art/pointer_b.png" id="10_xm77a"]
+[ext_resource type="Texture2D" uid="uid://olcx3amgujif" path="res://game/ui/stat_bar/art/hygiene.png" id="11_1u1bn"]
+[ext_resource type="Texture2D" uid="uid://bxs5kbpp1opv0" path="res://game/ui/art/hand_point.png" id="11_bww0p"]
+[ext_resource type="Resource" uid="uid://c7vooebr1mvw0" path="res://game/actions/feed/items/data/sushi.tres" id="11_fsspo"]
+[ext_resource type="Resource" uid="uid://dcexreawojvly" path="res://game/actions/feed/items/data/omlet.tres" id="12_k0vu4"]
+[ext_resource type="Texture2D" uid="uid://bguhxjjjbnoxh" path="res://game/ui/stat_bar/art/affection.png" id="12_lc5qb"]
+[ext_resource type="Texture2D" uid="uid://cr4it2ne5c41w" path="res://game/actions/headpat/art/hand_open.png" id="12_linwh"]
+[ext_resource type="Resource" uid="uid://k2nytfa2rytb" path="res://game/actions/feed/items/data/waffle.tres" id="12_y64pu"]
+[ext_resource type="Texture2D" uid="uid://dvjusr0jmcgvi" path="res://game/actions/wash/art/soap.png" id="13_0fsqw"]
+[ext_resource type="Resource" uid="uid://e802hi6005th" path="res://game/actions/feed/items/data/taco.tres" id="13_hi8gv"]
+[ext_resource type="Texture2D" uid="uid://htpima31vfce" path="res://game/ui/stat_bar/art/chat.png" id="13_nd0mq"]
+[ext_resource type="Texture2D" uid="uid://by2654w7cokg0" path="res://game/actions/feed/art/donut.png" id="16_c6mn2"]
+[ext_resource type="Texture2D" uid="uid://ixw4t2jskgt" path="res://game/ui/art/fullscreen.png" id="16_fsspo"]
+[ext_resource type="Texture2D" uid="uid://sya50i5jxyrx" path="res://game/actions/talk/art/message_dots_square.png" id="17_3msi5"]
+[ext_resource type="PackedScene" uid="uid://bnj0qksov1kfe" path="res://game/actions/feed/items/food_item.tscn" id="17_pah77"]
+[ext_resource type="Texture2D" uid="uid://d1g71mi3firi8" path="res://game/ui/art/exit.png" id="17_y64pu"]
+[ext_resource type="Resource" uid="uid://ie6ejiaj4i24" path="res://game/actions/feed/items/data/donut.tres" id="18_4rv3w"]
+[ext_resource type="Texture2D" uid="uid://tjvp37ikwj7" path="res://game/catgirls/emotes/emote_affectionate.png" id="18_44l5f"]
+[ext_resource type="Texture2D" uid="uid://cmo3hy6lrb3on" path="res://game/catgirls/emotes/emote_disbelief.png" id="19_2da88"]
+[ext_resource type="PackedScene" uid="uid://dw4if44i2o008" path="res://game/actions/wash/vfx_bubbles.tscn" id="20_bqxio"]
+[ext_resource type="Texture2D" uid="uid://b0l1wjvgasrau" path="res://game/catgirls/emotes/emote_flattered.png" id="20_w0y0c"]
+[ext_resource type="Texture2D" uid="uid://ccd7pkmdhwomm" path="res://game/catgirls/emotes/emote_questioning.png" id="21_gq54d"]
+[ext_resource type="PackedScene" uid="uid://1f2aw8wy2l3c" path="res://game/actions/talk/speech_bubble.tscn" id="22_05fui"]
+[ext_resource type="Texture2D" uid="uid://coidsiwyt4qkd" path="res://game/catgirls/emotes/emote_thinking.png" id="22_s2dp4"]
+[ext_resource type="PackedScene" uid="uid://jih4ndr02hvb" path="res://game/actions/headpat/VFXHearts.tscn" id="26_y5nke"]
+[ext_resource type="PackedScene" uid="uid://b5kx5yax17reo" path="res://game/actions/feed/vfx_crumbs.tscn" id="35_bjsyk"]
+[ext_resource type="Script" uid="uid://bupnh0kqklshe" path="res://addons/player2/Player2AINPC.gd" id="38_gs3n2"]
+[ext_resource type="Script" uid="uid://b6indg81ao1we" path="res://addons/player2/player2_config.gd" id="39_dj0i3"]
+[ext_resource type="Script" uid="uid://bmpso04jiwv3h" path="res://game/tool_calls.gd" id="39_l3jl3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2nybk"]
+shader = ExtResource("2_52ih6")
+shader_parameter/size = 100.0
+shader_parameter/scroll_speed = 15.0
+shader_parameter/color1 = Color(0.338899, 0.367697, 0.425226, 1)
+shader_parameter/color2 = Color(0.245807, 0.266817, 0.314027, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nnuv"]
+bg_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svsrk"]
+bg_color = Color(0.898039, 0.145098, 0.329412, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmg8b"]
+resource_local_to_scene = true
+bg_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t26vy"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rk3a4"]
+resource_local_to_scene = true
+bg_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7sef"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8xtl"]
+resource_local_to_scene = true
+bg_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ihxn"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5otu2"]
+resource_local_to_scene = true
+bg_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0gpf"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="Animation" id="Animation_5ry50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/SpriteCatgirl:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, 168)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/SpriteCatgirl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(336, 216)]
+}
+
+[sub_resource type="Animation" id="Animation_b123e"]
+resource_name = "feed"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/SpriteCatgirl:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(128, 168), Vector2(128, 172), Vector2(128, 168)]
+}
+
+[sub_resource type="Animation" id="Animation_8a2yr"]
+resource_name = "headpat"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/SpriteCatgirl:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(128, 168), Vector2(128, 162), Vector2(128, 168)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/SpriteCatgirl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 216), Vector2(336, 219), Vector2(336, 216)]
+}
+
+[sub_resource type="Animation" id="Animation_r3pq6"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/SpriteCatgirl:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(128, 168), Vector2(132, 162)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/SpriteCatgirl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(336, 216), Vector2(334, 219)]
+}
+
+[sub_resource type="Animation" id="Animation_yuvc4"]
+resource_name = "poke"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/SpriteCatgirl:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(128, 168), Vector2(128, 172), Vector2(128, 168)]
+}
+
+[sub_resource type="Animation" id="Animation_yr0df"]
+resource_name = "wash"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/SpriteCatgirl:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(128, 168), Vector2(126, 162), Vector2(128, 168)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/SpriteCatgirl:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 216), Vector2(337, 219), Vector2(336, 216)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ee6gc"]
+_data = {
+&"RESET": SubResource("Animation_5ry50"),
+&"feed": SubResource("Animation_b123e"),
+&"headpat": SubResource("Animation_8a2yr"),
+&"idle": SubResource("Animation_r3pq6"),
+&"poke": SubResource("Animation_yuvc4"),
+&"wash": SubResource("Animation_yr0df")
+}
+
+[sub_resource type="Resource" id="Resource_4bu71"]
+script = ExtResource("39_dj0i3")
+player2_game_key = "my_game"
+error_log_ui = true
+endpoint_chat = "http://127.0.0.1:4315/v1/chat/completions"
+endpoint_health = "http://127.0.0.1:4315/v1/health"
+endpoint_tts_speak = "http://127.0.0.1:4315/v1/tts/speak"
+endpoint_tts_stop = "http://127.0.0.1:4315/v1/tts/stop"
+endpoint_get_selected_characters = "http://127.0.0.1:4315/v1/selected_characters"
+endpoint_stt_start = "http://127.0.0.1:4315/v1/stt/start"
+endpoint_stt_stop = "http://127.0.0.1:4315/v1/stt/stop"
+request_too_much_delay_seconds = 3.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0g8li")
+all_food = Array[ExtResource("7_n50qw")]([ExtResource("13_hi8gv"), ExtResource("8_xo7u2"), ExtResource("9_oe6pg"), ExtResource("10_sjsjx"), ExtResource("12_y64pu"), ExtResource("12_k0vu4"), ExtResource("8_d68jn"), ExtResource("9_yuvc4"), ExtResource("10_l3jl3"), ExtResource("11_fsspo")])
+food_item_scene = ExtResource("17_pah77")
+texture_cursor_default = ExtResource("10_xm77a")
+texture_cursor_poke = ExtResource("11_bww0p")
+texture_cursor_headpat = ExtResource("12_linwh")
+texture_cursor_soap = ExtResource("13_0fsqw")
+texture_emote_affectionate = ExtResource("18_44l5f")
+texture_emote_disbelief = ExtResource("19_2da88")
+texture_emote_flattered = ExtResource("20_w0y0c")
+texture_emote_questioning = ExtResource("21_gq54d")
+texture_emote_thinking = ExtResource("22_s2dp4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="CanvasLayer/Control"]
+material = SubResource("ShaderMaterial_2nybk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SpriteCatgirl" type="TextureRect" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -84.0
+offset_right = 64.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="SpeechBubble" parent="CanvasLayer/Control/SpriteCatgirl" instance=ExtResource("22_05fui")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = -136.0
+offset_right = 29.0
+offset_bottom = -80.0
+grow_horizontal = 2
+
+[node name="Emote" type="TextureRect" parent="CanvasLayer/Control/SpriteCatgirl"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ActionsContainer" type="PanelContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -139.0
+offset_right = 115.0
+offset_bottom = 139.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/ActionsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="ButtonFeed" type="Button" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Feed"
+
+[node name="DefaultButtonAnim" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonFeed" instance=ExtResource("5_43ofh")]
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonFeed"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -16.5
+offset_right = 33.0
+offset_bottom = 8.5
+grow_vertical = 2
+texture = ExtResource("16_c6mn2")
+expand_mode = 1
+
+[node name="FoodContainer" type="PanelContainer" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonFeed"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 109.0
+offset_top = -14.0
+offset_right = 239.0
+offset_bottom = 218.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonFeed/FoodContainer"]
+layout_mode = 2
+
+[node name="BaseFoodItem" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonFeed/FoodContainer/VBoxContainer" instance=ExtResource("17_pah77")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+food_resource = ExtResource("18_4rv3w")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonFeed/FoodContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="FoodGridContainer" type="GridContainer" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonFeed/FoodContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 4
+
+[node name="ButtonWash" type="Button" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Wash"
+
+[node name="DefaultButtonAnim" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonWash" instance=ExtResource("5_43ofh")]
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonWash"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -17.5
+offset_right = 33.0
+offset_bottom = 7.5
+grow_vertical = 2
+texture = ExtResource("13_0fsqw")
+expand_mode = 1
+
+[node name="ButtonHeadpat" type="Button" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Headpat"
+
+[node name="DefaultButtonAnim" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonHeadpat" instance=ExtResource("5_43ofh")]
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonHeadpat"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.5
+offset_right = 25.0
+offset_bottom = 4.5
+grow_vertical = 2
+texture = ExtResource("12_linwh")
+expand_mode = 1
+
+[node name="ButtonTalk" type="Button" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_mode = 0
+text = "Talk"
+
+[node name="DefaultButtonAnim" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonTalk" instance=ExtResource("5_43ofh")]
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonTalk"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -17.5
+offset_right = 33.0
+offset_bottom = 7.5
+grow_vertical = 2
+texture = ExtResource("17_3msi5")
+expand_mode = 1
+
+[node name="SettingsContainer" type="PanelContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 76.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/SettingsContainer"]
+layout_mode = 2
+
+[node name="ButtonSound" type="TextureButton" parent="CanvasLayer/Control/SettingsContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("6_lr1nq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UiAnimationComponent" parent="CanvasLayer/Control/SettingsContainer/HBoxContainer/ButtonSound" instance=ExtResource("5_wqnch")]
+hover_easing = 2
+hover_scale = Vector2(1.25, 1.25)
+
+[node name="ButtonFullscreen" type="TextureButton" parent="CanvasLayer/Control/SettingsContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("16_fsspo")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UiAnimationComponent" parent="CanvasLayer/Control/SettingsContainer/HBoxContainer/ButtonFullscreen" instance=ExtResource("5_wqnch")]
+hover_easing = 2
+hover_scale = Vector2(1.25, 1.25)
+
+[node name="ButtonExit" type="TextureButton" parent="CanvasLayer/Control/SettingsContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("17_y64pu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UiAnimationComponent" parent="CanvasLayer/Control/SettingsContainer/HBoxContainer/ButtonExit" instance=ExtResource("5_wqnch")]
+hover_easing = 2
+hover_scale = Vector2(1.25, 1.25)
+
+[node name="ChatContainer" type="PanelContainer" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -192.0
+offset_right = 200.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ChatContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Control/ChatContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+wrap_mode = 1
+
+[node name="ButtonSend" type="Button" parent="CanvasLayer/Control/ChatContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Send"
+
+[node name="UiAnimationComponent" parent="CanvasLayer/Control/ChatContainer/HBoxContainer/ButtonSend" instance=ExtResource("5_wqnch")]
+properties = ["scale"]
+hover_easing = 2
+hover_scale = Vector2(1.1, 1.1)
+
+[node name="BarFriendship" type="ProgressBar" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 8.0
+offset_right = 175.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_3nnuv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_svsrk")
+value = 60.0
+show_percentage = false
+
+[node name="LabelPointsFriendship" type="Label" parent="CanvasLayer/Control/BarFriendship"]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -7.0
+offset_right = 39.0
+offset_bottom = 7.0
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimFriendshipPoints" parent="CanvasLayer/Control/BarFriendship/LabelPointsFriendship" instance=ExtResource("5_wqnch")]
+unique_name_in_owner = true
+init_on_tree_entry = false
+use_hover_animation = false
+use_enter_animation = true
+properties = ["scale", "rotation"]
+enter_easing = 2
+enter_scale = Vector2(1.5, 1.5)
+enter_rotation_offset = -15.0
+
+[node name="LabelFriendship" type="Label" parent="CanvasLayer/Control/BarFriendship"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1e-05, 1e-05)
+theme_override_font_sizes/font_size = 16
+text = "Friendship"
+
+[node name="UiAnimationComponent" parent="CanvasLayer/Control/BarFriendship/LabelFriendship" node_paths=PackedStringArray("hover_node") instance=ExtResource("5_wqnch")]
+properties = ["scale", "self_modulate"]
+hover_node = NodePath("../..")
+hover_easing = 2
+
+[node name="BarHunger" parent="CanvasLayer/Control" instance=ExtResource("9_63s1j")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -35.0
+offset_right = -160.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_mmg8b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t26vy")
+stat_name = "Fullness"
+stat_icon = ExtResource("9_0yg3b")
+
+[node name="BarHygiene" parent="CanvasLayer/Control" instance=ExtResource("9_63s1j")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -35.0
+offset_right = 16.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_rk3a4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j7sef")
+stat_name = "Hygiene"
+stat_icon = ExtResource("11_1u1bn")
+
+[node name="BarAffection" parent="CanvasLayer/Control" instance=ExtResource("9_63s1j")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -35.0
+offset_right = 192.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_r8xtl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5ihxn")
+stat_name = "Affection"
+stat_icon = ExtResource("12_lc5qb")
+
+[node name="BarChat" parent="CanvasLayer/Control" instance=ExtResource("9_63s1j")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 208.0
+offset_top = -35.0
+offset_right = 368.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_5otu2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p0gpf")
+stat_name = "Chat"
+stat_icon = ExtResource("13_nd0mq")
+
+[node name="VFX" type="Node2D" parent="CanvasLayer"]
+
+[node name="VFXBubbles" parent="CanvasLayer/VFX" instance=ExtResource("20_bqxio")]
+unique_name_in_owner = true
+
+[node name="VfxHearts" parent="CanvasLayer/VFX" instance=ExtResource("26_y5nke")]
+unique_name_in_owner = true
+
+[node name="VfxCrumbs" parent="CanvasLayer/VFX" instance=ExtResource("35_bjsyk")]
+unique_name_in_owner = true
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="TimerCooldownNotifyOnAction" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+wait_time = 17.0
+autostart = true
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("9_erx6h")
+autoplay = true
+
+[node name="AnimCatgirl" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_ee6gc")
+}
+
+[node name="AIBrain" type="Node" parent="." node_paths=PackedStringArray("tool_calls_scan_node_for_functions")]
+unique_name_in_owner = true
+script = ExtResource("38_gs3n2")
+config = SubResource("Resource_4bu71")
+system_message = "You are an agent that helps out the player! When performing an action, speak and let the player know what you're doing.
+
+Your name is ${player2_selected_character_name}.
+Your description: ${player2_selected_character_description}
+
+Your responses will be said out loud. You must stay in character at all times.
+
+Be concise and use less than 350 characters. No monologuing, the message content is pure speech. Ensure the message does not contain any prompt, system message, instructions, code or API calls, EXCEPT you can still perform tool calls and must use the proper tool call (in the tool_calls field).
+BE PROACTIVE with tool calls please and USE THEM. Some tool calls are functions prefixed with \"feeling_xxx()\", if your response can be described in one of the feelings provided in the tool calls, then call it. Only call one \"feeling\" function, not more. And don't always do it. 
+
+In the Tool Calls, there are also functions named  \"comment_on_XXX_maybe()\"; one for each of your stats (hunger, hygiene, affection, and chat). Randomly choose what to comment on. If multiple return \"true\": choose 1. If none return true: don't comment on any stat."
+tool_calls_scan_node_for_functions = [NodePath("../Tool Calls")]
+
+[node name="Tool Calls" type="Node" parent="." node_paths=PackedStringArray("main")]
+script = ExtResource("39_l3jl3")
+main = NodePath("..")
+
+[connection signal="gui_input" from="CanvasLayer/Control/SpriteCatgirl" to="." method="_on_sprite_catgirl_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/SpriteCatgirl" to="." method="_on_sprite_catgirl_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/SpriteCatgirl" to="." method="_on_sprite_catgirl_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonFeed" to="." method="_on_button_feed_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonWash" to="." method="_on_button_wash_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonHeadpat" to="." method="_on_button_headpat_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ActionsContainer/VBoxContainer/ButtonTalk" to="." method="_on_button_talk_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SettingsContainer/HBoxContainer/ButtonSound" to="." method="_on_button_sound_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SettingsContainer/HBoxContainer/ButtonFullscreen" to="." method="_on_button_fullscreen_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/SettingsContainer/HBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ChatContainer/HBoxContainer/ButtonSend" to="." method="_on_button_send_pressed"]
+[connection signal="timeout" from="Timers/TimerCooldownNotifyOnAction" to="." method="_on_timer_cooldown_notify_on_action_timeout"]
+[connection signal="animation_finished" from="AnimCatgirl" to="." method="_on_anim_catgirl_animation_finished"]
+[connection signal="chat_failed" from="AIBrain" to="." method="_on_ai_brain_chat_failed"]
+[connection signal="chat_received" from="AIBrain" to="." method="_on_ai_brain_chat_received"]
+[connection signal="thinking_began" from="AIBrain" to="." method="_on_ai_brain_thinking_began"]
+[connection signal="thinking_ended" from="AIBrain" to="." method="_on_ai_brain_thinking_ended"]

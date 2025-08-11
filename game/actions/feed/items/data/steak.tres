@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodResource" load_steps=3 format=3 uid="uid://dbfs7afp1vrd2"]
+
+[ext_resource type="Texture2D" uid="uid://uuhytodxu8n3" path="res://game/actions/feed/items/art/95_steak.png" id="1_rk6gp"]
+[ext_resource type="Script" uid="uid://conk0en7jxcil" path="res://game/actions/feed/items/food_resource.gd" id="2_e0y52"]
+
+[resource]
+script = ExtResource("2_e0y52")
+item_name = "steak"
+item_icon = ExtResource("1_rk6gp")
+price = 10
+consume_reward = 2.5

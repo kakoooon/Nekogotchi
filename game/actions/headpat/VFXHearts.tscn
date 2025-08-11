@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://jih4ndr02hvb"]
+
+[ext_resource type="Texture2D" uid="uid://byc8h8gtndq2c" path="res://game/actions/headpat/art/heart.png" id="1_1lwrr"]
+
+[node name="VfxHearts" type="CPUParticles2D"]
+emitting = false
+amount = 2
+texture = ExtResource("1_1lwrr")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 77.0
+scale_amount_min = 0.3
+scale_amount_max = 0.7

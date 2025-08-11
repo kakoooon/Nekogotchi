@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodResource" load_steps=3 format=3 uid="uid://c2u06egu0djhf"]
+
+[ext_resource type="Texture2D" uid="uid://bfrtnow2n3sfr" path="res://game/actions/feed/items/art/7_bread.png" id="1_712gf"]
+[ext_resource type="Script" uid="uid://conk0en7jxcil" path="res://game/actions/feed/items/food_resource.gd" id="2_pgcve"]
+
+[resource]
+script = ExtResource("2_pgcve")
+item_name = "bread"
+item_icon = ExtResource("1_712gf")
+price = 2
+consume_reward = 2.0

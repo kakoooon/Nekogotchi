@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodResource" load_steps=3 format=3 uid="uid://crqwms6ghbtpk"]
+
+[ext_resource type="Texture2D" uid="uid://dj8x7fmg7tsqf" path="res://game/actions/feed/items/art/15_burger.png" id="1_3ic30"]
+[ext_resource type="Script" uid="uid://conk0en7jxcil" path="res://game/actions/feed/items/food_resource.gd" id="2_6kysl"]
+
+[resource]
+script = ExtResource("2_6kysl")
+item_name = "burger"
+item_icon = ExtResource("1_3ic30")
+price = 4
+consume_reward = 2.1

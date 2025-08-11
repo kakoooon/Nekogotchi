@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodResource" load_steps=3 format=3 uid="uid://esotmgbmp2dq"]
+
+[ext_resource type="Texture2D" uid="uid://bwj3ffa0jbstc" path="res://game/actions/feed/items/art/22_cheesecake.png" id="1_wlktf"]
+[ext_resource type="Script" uid="uid://conk0en7jxcil" path="res://game/actions/feed/items/food_resource.gd" id="2_bcu41"]
+
+[resource]
+script = ExtResource("2_bcu41")
+item_name = "cheesecake"
+item_icon = ExtResource("1_wlktf")
+price = 4
+consume_reward = 2.2

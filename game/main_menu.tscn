@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://s8vb2hxlfbhu"]
+
+[ext_resource type="Script" uid="uid://dju5hpbalykvn" path="res://game/main_menu.gd" id="1_2gctw"]
+[ext_resource type="Shader" uid="uid://dee54qispbxcm" path="res://common/shaders/checkerboard.gdshader" id="2_2ed8k"]
+[ext_resource type="Texture2D" uid="uid://dg1hcgjv3rs3h" path="res://game/ui/art/logo.png" id="3_wo36y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t606k"]
+shader = ExtResource("2_2ed8k")
+shader_parameter/size = 100.0
+shader_parameter/scroll_speed = 15.0
+shader_parameter/color1 = Color(0.337255, 0.368627, 0.423529, 1)
+shader_parameter/color2 = Color(0.247059, 0.266667, 0.313726, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2gctw")
+
+[node name="Background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_t606k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Logo" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(475, 126.5)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.5
+offset_top = -63.25
+offset_right = 237.5
+offset_bottom = 63.25
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_wo36y")
+expand_mode = 1
+stretch_mode = 5

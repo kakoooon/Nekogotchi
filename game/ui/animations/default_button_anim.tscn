@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dum1o0rp15iq7"]
+
+[ext_resource type="PackedScene" uid="uid://cmtnvqayxoalt" path="res://common/ui_animation_component/ui_animation_component.tscn" id="1_g0fnh"]
+
+[node name="DefaultButtonAnim" instance=ExtResource("1_g0fnh")]
+hover_easing = 2
+hover_size_offset = Vector2(32, 0)

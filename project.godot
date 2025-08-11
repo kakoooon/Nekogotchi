@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Neko-GOTCHI"
+run/main_scene="uid://s8vb2hxlfbhu"
+config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="uid://dlvhewg7es0bf"
+config/windows_native_icon="res://ico.ico"
+
+[autoload]
+
+Player2WebHelper="*res://addons/player2/helpers/web_helper.gd"
+Player2ErrorHelper="*res://addons/player2/helpers/error_helper.tscn"
+SaveFileHandler="*res://config/save_file_handler.gd"
+Global="*res://config/global.gd"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/size/always_on_top=true
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/player2/plugin.cfg")
+
+[gui]
+
+theme/custom="res://game/ui/theme/theme_default.tres"

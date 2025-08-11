@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodResource" load_steps=3 format=3 uid="uid://dcexreawojvly"]
+
+[ext_resource type="Texture2D" uid="uid://b011lfb07mh8h" path="res://game/actions/feed/items/art/73_omlet.png" id="1_dmhw4"]
+[ext_resource type="Script" uid="uid://conk0en7jxcil" path="res://game/actions/feed/items/food_resource.gd" id="2_wp64f"]
+
+[resource]
+script = ExtResource("2_wp64f")
+item_name = "omlet"
+item_icon = ExtResource("1_dmhw4")
+price = 6
+consume_reward = 2.2

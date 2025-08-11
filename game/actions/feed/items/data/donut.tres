@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodResource" load_steps=3 format=3 uid="uid://ie6ejiaj4i24"]
+
+[ext_resource type="Texture2D" uid="uid://bo3g0jfyvvl2t" path="res://game/actions/feed/items/art/34_donut.png" id="1_51qoj"]
+[ext_resource type="Script" uid="uid://conk0en7jxcil" path="res://game/actions/feed/items/food_resource.gd" id="2_o16hn"]
+
+[resource]
+script = ExtResource("2_o16hn")
+item_name = "donut"
+item_icon = ExtResource("1_51qoj")
+price = 0
+consume_reward = 0.1

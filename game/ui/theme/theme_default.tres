@@ -1,0 +1,35 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b5mumwcsmh6iy"]
+
+[ext_resource type="Texture2D" uid="uid://bnoy3gdlcffio" path="res://game/ui/theme/button/art/buttons.png" id="1_kpbo1"]
+[ext_resource type="StyleBox" uid="uid://dfr0k76ubypvv" path="res://game/ui/theme/button/button_normal.tres" id="1_wetty"]
+[ext_resource type="StyleBox" uid="uid://bwb5846g8wio7" path="res://game/ui/theme/button/button_hover.tres" id="2_0upw7"]
+[ext_resource type="StyleBox" uid="uid://ch0deojiliubv" path="res://game/ui/theme/panel/panel_body.tres" id="2_g6003"]
+[ext_resource type="FontFile" uid="uid://dtn3y683sk12o" path="res://game/ui/theme/fonts/ComfortaaBold-rmEK.ttf" id="5_uovvk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y31gj"]
+texture = ExtResource("1_kpbo1")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+region_rect = Rect2(310, 506, 160, 160)
+modulate_color = Color(0.351563, 0.351563, 0.351563, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqjtq"]
+texture = ExtResource("1_kpbo1")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+region_rect = Rect2(310, 506, 160, 160)
+
+[resource]
+default_font = ExtResource("5_uovvk")
+default_font_size = 12
+Button/styles/disabled = SubResource("StyleBoxTexture_y31gj")
+Button/styles/focus = SubResource("StyleBoxTexture_gqjtq")
+Button/styles/hover = ExtResource("2_0upw7")
+Button/styles/normal = ExtResource("1_wetty")
+Button/styles/pressed = ExtResource("2_0upw7")
+Panel/styles/panel = ExtResource("2_g6003")
+PanelContainer/styles/panel = ExtResource("2_g6003")

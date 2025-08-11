@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://dav0mv42aeolv"]
+
+[ext_resource type="Script" uid="uid://borbicn5vgxg3" path="res://game/ui/stat_bar/stat_bar.gd" id="1_j67e0"]
+[ext_resource type="Texture2D" uid="uid://bguhxjjjbnoxh" path="res://game/ui/stat_bar/art/affection.png" id="2_5o3l6"]
+[ext_resource type="PackedScene" uid="uid://cmtnvqayxoalt" path="res://common/ui_animation_component/ui_animation_component.tscn" id="2_jbjor"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_em7a8"]
+resource_local_to_scene = true
+bg_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lueag"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.164706, 0.180392, 0.215686, 1)
+
+[sub_resource type="Gradient" id="Gradient_p2iar"]
+offsets = PackedFloat32Array(0, 0.487013, 1)
+colors = PackedColorArray(0.698039, 0.172549, 0.172549, 1, 0.899898, 0.789921, 0.312923, 1, 0.462745, 0.705882, 0.380392, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mc8gt"]
+gradient = SubResource("Gradient_p2iar")
+
+[node name="StatBar" type="ProgressBar"]
+offset_right = 160.0
+offset_bottom = 15.0
+theme_override_styles/background = SubResource("StyleBoxFlat_em7a8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lueag")
+value = 60.0
+show_percentage = false
+script = ExtResource("1_j67e0")
+gradient_red_green = SubResource("GradientTexture1D_mc8gt")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -16.0
+offset_right = 9.0
+offset_bottom = -16.0
+use_top_left = true
+
+[node name="Icon" type="TextureRect" parent="CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+texture = ExtResource("2_5o3l6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = -18.0
+offset_right = 38.0
+offset_bottom = -4.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 12
+text = "Stat: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelAnim" parent="Label" node_paths=PackedStringArray("hover_node") instance=ExtResource("2_jbjor")]
+unique_name_in_owner = true
+init_on_tree_entry = false
+properties = ["scale", "self_modulate"]
+hover_node = NodePath("../..")
+hover_easing = 2

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodResource" load_steps=3 format=3 uid="uid://dcewmgls26mm1"]
+
+[ext_resource type="Texture2D" uid="uid://pu1tygs21f66" path="res://game/actions/feed/items/art/81_pizza.png" id="1_vdo5m"]
+[ext_resource type="Script" uid="uid://conk0en7jxcil" path="res://game/actions/feed/items/food_resource.gd" id="2_bjvwp"]
+
+[resource]
+script = ExtResource("2_bjvwp")
+item_name = "pizza"
+item_icon = ExtResource("1_vdo5m")
+price = 6
+consume_reward = 2.3
