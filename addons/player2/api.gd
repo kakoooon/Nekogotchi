@@ -4,7 +4,7 @@ static func _get_headers(config : Player2Config) -> Array[String]:
 	return [
 		"Content-Type: application/json; charset=utf-8",
 		"Accept: application/json; charset=utf-8",
-		"player2-game-key: " + config.player2_game_key
+		"player2-game-key: nekogotchi"
 	]
 
 static func get_health(config : Player2Config, on_complete : Callable, on_fail : Callable = Callable()):
