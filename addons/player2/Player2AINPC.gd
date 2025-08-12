@@ -2,7 +2,7 @@
 class_name Player2AINPC
 extends Node
 
-@export var config : Player2Config = Player2Config.new()
+@onready var config : Player2Config = Player2Config.new()
 
 ## The main system message for every prompt.
 ## ${player2_selected_character_name} and ${player2_selected_character_description} are sourced from the player's selected characters. Feel free to remove this if `use_player2_selected_character` is false.
@@ -755,6 +755,8 @@ func get_agent_status() -> String:
 	return ""
 
 func _ready() -> void:
+	#config.player2_game_key = "nekogotchi"
+	
 	_queue_process_timer = Timer.new()
 	self.add_child(_queue_process_timer)
 	_queue_process_timer.wait_time = queue_check_interval_seconds
@@ -776,3 +778,7 @@ func _exit_tree() -> void:
 	# Before we leave, store our conversation history.
 	if auto_store_conversation_history:
 		save_conversation_history()
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		print(config.player2_game_key)
